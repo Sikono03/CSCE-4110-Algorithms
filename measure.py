@@ -1,16 +1,18 @@
-import random 
-import time
+import random
 import string
+import time
 from lcs_solver import create_table
 
-def measure(sizes):
-    total = []
-    for n in sizes:
-        x = ''.join(random.choices(string.ascii_uppercase, k=n))
-        y = ''.join(random.choices(string.ascii_uppercase, k=n))
-        start_time = time.perf_counter()
-        create_table(x, y)
-        end_time = time.perf_counter() - start_time
-        total.append((n, n * n, end_time))
-    return total
 
+# Time create_table on random strings of each size.
+# Returns a list of (n, number of cells, seconds).
+def measure(sizes):
+    results = []
+    for n in sizes:
+        x = "".join(random.choices(string.ascii_uppercase, k=n))
+        y = "".join(random.choices(string.ascii_uppercase, k=n))
+        start = time.perf_counter()
+        create_table(x, y)
+        seconds = time.perf_counter() - start
+        results.append((n, n * n, seconds))
+    return results
