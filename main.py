@@ -1,6 +1,6 @@
 import tkinter as tk
-from gui import LCS-App
+from gui import LCSApp
 
 root = tk.Tk()
-LCS-App(root)
+LCSApp(root)
 root.mainloop()
