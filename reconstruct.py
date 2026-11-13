@@ -16,6 +16,6 @@ def get_lcs(dp, x, y):
             else:
                 j -= 1
         path.append((i, j))
-        chars.reverse()
-        matches.reverse()
+    chars.reverse()
+    matches.reverse()
     return ''.join(reversed(chars)), path, matches
